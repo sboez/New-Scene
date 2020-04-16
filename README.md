@@ -1,9 +1,9 @@
 # New-Scene
 
-![GitHub top language](https://img.shields.io/github/languages/top/sboez/New-Scene) <img src="https://img.shields.io/badge/three.js-r112-informational">
+![GitHub top language](https://img.shields.io/github/languages/top/sboez/New-Scene) <img src="https://img.shields.io/badge/three.js-r112-orange">
 
 This repo was made for my Three.js projects, this is how they begins, with a simple scene.
-As I'm working often with 3D models, I added FBX and GLTF Loader.
+As I'm working often with 3D models, I added FBX and GLTF Loader and a GUI to set the model or mesh easier.
 
 # Usage
 

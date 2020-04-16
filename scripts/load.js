@@ -12,17 +12,20 @@ class LoadInit {
 		}
 	}
 	loadGltf(path) {
-		const loader = new THREE.GLTFLoader()
-    	loader.load(path, function(gltf) {
-			gltf.scene.traverse(function(child) {
-				if (child.isMesh) {
-					child.castShadow = true;
-					child.receiveShadow = true;
-				}
+		return new Promise((resolve) => {
+			const loader = new THREE.GLTFLoader()
+	    	loader.load(path, function(gltf) {
+				gltf.scene.traverse(function(child) {
+					if (child.isMesh) {
+						child.castShadow = true;
+						child.receiveShadow = true;
+					}
+				});
+				model = gltf.scene;
+				model.scale.multiplyScalar(40);
+				Scene.scene.add(gltf.scene);
+				resolve(gltf.scene);
 			});
-			model = gltf.scene;
-			model.scale.multiplyScalar(40);
-			Scene.scene.add(gltf.scene);
 		});
 	}
 	loadFbx(path) {
