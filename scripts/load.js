@@ -20,8 +20,8 @@ class LoadInit {
 					child.receiveShadow = true;
 				}
 			});
-			let model = gltf.scene;
-			model.scale.multiplyScalar(100);
+			model = gltf.scene;
+			model.scale.multiplyScalar(40);
 			Scene.scene.add(gltf.scene);
 		});
 	}

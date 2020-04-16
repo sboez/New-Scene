@@ -1,4 +1,4 @@
-let Scene, Load;
+let Scene, Load, model;
 
 function letsPlay() {
 	init();
@@ -10,6 +10,7 @@ function init() {
 	Scene.createScene();
 
 	Load = new LoadInit();
+	Load.loadFile("assets/models/street_car.glb");
 
 	let controls = new THREE.OrbitControls(Scene.camera, Scene.renderer.domElement);
 	controls.update();

@@ -4,7 +4,7 @@ class SceneInit {
 		this.scene.background = new THREE.Color(0xa0a0a0);
 
 		this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
-		this.camera.position.set(200, 100, 100);
+		this.camera.position.set(0, 100, 200);
 
 		this.light = new THREE.HemisphereLight(0xffffff, 0x404040, 1); 
 		this.scene.add(this.light);
