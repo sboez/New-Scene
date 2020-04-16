@@ -1,6 +1,7 @@
 class SceneInit {
 	createScene() {
 		this.scene = new THREE.Scene();
+		this.scene.background = new THREE.Color(0xa0a0a0);
 
 		this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
 		this.camera.position.set(200, 100, 100);
@@ -12,6 +13,8 @@ class SceneInit {
 		this.plane.rotation.x = -Math.PI / 2;
 		this.plane.receiveShadow = true;
 		this.scene.add(this.plane);
+
+		this.createRenderer();
 	}
 	createRenderer() {
 		this.renderer = new THREE.WebGLRenderer({ antialias: true });

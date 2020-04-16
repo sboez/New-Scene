@@ -1,8 +1,7 @@
 # New-Scene
 
-![GitHub top language](https://img.shields.io/github/languages/top/sboez/New-Scene) 
-
 This repo was made for my own Three.js projects, this is how they begins, with a simple scene.
+As I'm working often with 3D models, I added FBX and GLTF Loader.
 
 # New with Three.js ?
 

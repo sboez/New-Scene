@@ -1,4 +1,4 @@
-let Scene;
+let Scene, Load;
 
 function letsPlay() {
 	init();
@@ -8,7 +8,8 @@ function letsPlay() {
 function init() {
 	Scene = new SceneInit();
 	Scene.createScene();
-	Scene.createRenderer();
+
+	Load = new LoadInit();
 
 	let controls = new THREE.OrbitControls(Scene.camera, Scene.renderer.domElement);
 	controls.update();
