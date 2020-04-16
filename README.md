@@ -2,7 +2,7 @@
 
 ![GitHub top language](https://img.shields.io/github/languages/top/sboez/New-Scene) 
 
-This is how my all Three.js projects begins.
+This repo was made for my own Three.js projects, this is how they begins, with a simple scene.
 
 # New with Three.js ?
 
