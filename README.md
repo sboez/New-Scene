@@ -1,20 +1,25 @@
 # New-Scene
 
-![GitHub top language](https://img.shields.io/github/languages/top/sboez/New-Scene) <img src="https://img.shields.io/badge/three.js-r112-orange">
+![GitHub top language](https://img.shields.io/github/languages/top/sboez/New-Scene) <img src="https://img.shields.io/badge/three.js-r112-orange"> <img src="https://img.shields.io/badge/npm-v6.9.0-green">
 
 This repo was made for my Three.js projects, this is how they begins, with a simple scene.
-As I'm working often with 3D models, I added FBX and GLTF Loader and a GUI to set the model or mesh easier.
+As I'm often working with 3D models, I added FBX and GLTF Loader and a GUI to set the model or mesh easier.
 
 # Usage
 
-`git clone https://github.com/sboez/New-Scene.git`  
+```shell
+git clone https://github.com/sboez/New-Scene.git
+```
 
+```shell
+npm i 
+```
 
-`python -m SimpleHTTPServer`  
+```shell
+npm run start
+```
 
-
-Go to localhost:8000 and create your world :sparkles:  
-
+Go to [localhost:1234](http://localhost:1234) and create your world :sparkles:
 
 # New with Three.js ?
 
