@@ -19,7 +19,7 @@ npm i
 npm run start
 ```
 
-Go to [localhost:1234](http://localhost:1234) and create your world :sparkles:
+Go to [localhost:1234](localhost:1234) and create your world :sparkles:
 
 # New with Three.js ?
 
