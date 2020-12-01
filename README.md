@@ -1,9 +1,9 @@
 # New-Scene
 
-![GitHub top language](https://img.shields.io/github/languages/top/sboez/New-Scene) <img src="https://img.shields.io/badge/three.js-r112-orange"> <img src="https://img.shields.io/badge/npm-v6.9.0-green">
+![GitHub top language](https://img.shields.io/github/languages/top/sboez/New-Scene) <img src="https://img.shields.io/badge/three.js-r123-orange">
 
 This repo was made for my Three.js projects, this is how they begins, with a simple scene.
-As I'm often working with 3D models, I added FBX and GLTF Loader and a GUI to set the model or mesh easier.
+As I'm often working with 3D models, I added FBX and GLTF Loader and a GUI to set the model easier.
 
 # Usage
 
@@ -19,7 +19,7 @@ npm i
 npm run start
 ```
 
-Go to [localhost:1234](localhost:1234) and create your world :sparkles:
+You're ready to create your world :sparkles:
 
 # New with Three.js ?
 

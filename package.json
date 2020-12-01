@@ -1,10 +1,11 @@
 {
   "name": "new-scene",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "webpack-dev-server --watch --open",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,13 @@
   },
   "homepage": "https://github.com/sboez/New-Scene#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dat.gui": "^0.7.7",
+    "three": "^0.123.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^5.1.1",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
   }
 }
