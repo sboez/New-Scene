@@ -1,6 +1,6 @@
-import Scene from './scene';
-import Load from './load';
-import Gui from './gui';
+import Scene from './scripts/Scene';
+import Load from './scripts/Load';
+import Gui from './scripts/Gui';
 
 class App {
 	constructor() {
@@ -16,7 +16,7 @@ class App {
 		this.load = new Load(this.scene);
 		this.gui = new Gui(this.load);
 
-		await this.load.loadFile("assets/models/street_car.glb");
+		await this.load.loadFile("./models/street_car.glb");
 
 		this.init();
 		this.animate();
