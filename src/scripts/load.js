@@ -1,52 +1,25 @@
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import Scene from "./Scene";
 
-export default class Load {
-	constructor(scene) {
-		this.scene = scene;
-	}
+let scene = new Scene();
+export let gltfModel;
 
-	loadFile(path) {
-		this.extension = path.split('.').pop().toLowerCase();
-		switch (this.extension) {
-			case 'glb':
-			case 'gltf': 
-				this.loadGltf(path);
-				break;
-			case 'fbx':
-				this.loadFbx(path);
-				break;
-		}
-	}
+const loadFile = async function (path) {
+   const loader = new GLTFLoader();
+   const obj = await loader.loadAsync(path);
+   return obj;
+};
 
-	loadGltf(path) {
-		return new Promise((resolve) => {
-			const loader = new GLTFLoader()
-	    	loader.load(path, gltf => {
-				this.model = gltf.scene;
-				this.model.traverse((object) => {
-					if (object.isMesh) {
-						object.castShadow = true;
-						object.receiveShadow = true;
-					}
-				});
-				this.model.scale.multiplyScalar(40);
-				this.scene.add(this.model);
-				resolve(this.model);
-			});
-		});
-	}
+export const loadGltf = async (path) => {
+   const model = await loadFile(path);
+   gltfModel = model.scene;
 
-	loadFbx(path) {
-		const loader = new FBXLoader();
-		loader.load(path, object => {
-			object.traverse((child) => {
-				if (child.isMesh) {
-					child.castShadow = true;
-					child.receiveShadow = true;
-				}
-			});
-			this.scene.add(object);
-		});
-	}
-}
+   gltfModel.traverse((child) => {
+      if (child.isMesh) {
+         child.castShadow = true;
+         child.receiveShadow = true;
+      }
+   });
+   gltfModel.scale.multiplyScalar(40);
+   scene.add(gltfModel);
+};

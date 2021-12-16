@@ -1,17 +1,16 @@
 import Scene from "./scripts/Scene";
-import Load from "./scripts/Load";
 import Gui from "./scripts/Gui";
+import { loadGltf, gltfModel } from "./scripts/load";
 
 let scene = null;
-let load = null;
 let gui = null;
 
 const App = async () => {
    scene = new Scene();
-   load = new Load(scene);
-   gui = new Gui(load);
+   gui = new Gui();
 
-   await load.loadFile("./models/street_car.glb");
+   await loadGltf("./models/street_car.glb");
+   scene.add(gltfModel);
 
    init();
    animate();

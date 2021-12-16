@@ -1,4 +1,5 @@
 import GUI from "lil-gui";
+import { gltfModel } from "./load";
 
 const gui = new GUI();
 
@@ -20,14 +21,14 @@ export default class Gui {
          rotY: 0,
          rotX: 0,
          scaleUp: function () {
-            this.load.model.scale.x += 1;
-            this.load.model.scale.y += 1;
-            this.load.model.scale.z += 1;
+            gltfModel.scale.x += 1;
+            gltfModel.scale.y += 1;
+            gltfModel.scale.z += 1;
          },
          scaleDown: function () {
-            this.load.model.scale.x -= 1;
-            this.load.model.scale.y -= 1;
-            this.load.model.scale.z -= 1;
+            gltfModel.scale.x -= 1;
+            gltfModel.scale.y -= 1;
+            gltfModel.scale.z -= 1;
          },
       };
       this.setGUI(params);
@@ -45,19 +46,19 @@ export default class Gui {
          .add(params, "posX", -140, 140)
          .name("X")
          .onChange(() => {
-            this.load.model.position.x = params.posX;
+            gltfModel.position.x = params.posX;
          });
       folderPos
          .add(params, "posY", -140, 140)
          .name("Y")
          .onChange(() => {
-            this.load.model.position.z = params.posY;
+            gltfModel.position.z = params.posY;
          });
       folderPos
          .add(params, "posZ", -140, 140)
          .name("Z")
          .onChange(() => {
-            this.load.model.position.y = params.posZ;
+            gltfModel.position.y = params.posZ;
          });
    }
 
@@ -67,19 +68,19 @@ export default class Gui {
          .add(params, "scaleX", -500, 500)
          .name("X")
          .onChange(() => {
-            this.load.model.scale.x = params.scaleX;
+            gltfModel.scale.x = params.scaleX;
          });
       folderScale
          .add(params, "scaleY", -500, 500)
          .name("Y")
          .onChange(() => {
-            this.load.model.scale.y = params.scaleY;
+            gltfModel.scale.y = params.scaleY;
          });
       folderScale
          .add(params, "scaleZ", -500, 500)
          .name("Z")
          .onChange(() => {
-            this.load.model.scale.z = params.scaleZ;
+            gltfModel.scale.z = params.scaleZ;
          });
    }
 
@@ -89,13 +90,13 @@ export default class Gui {
          .add(params, "rotY", -5, 5)
          .name("Y")
          .onChange(() => {
-            this.load.model.rotation.y = params.rotY;
+            gltfModel.rotation.y = params.rotY;
          });
       folderRot
          .add(params, "rotX", -5, 5)
          .name("X")
          .onChange(() => {
-            this.load.model.rotation.x = params.rotX;
+            gltfModel.rotation.x = params.rotX;
          });
    }
 }
