@@ -1,47 +1,41 @@
-import Scene from './scripts/Scene';
-import Load from './scripts/Load';
-import Gui from './scripts/Gui';
+import Scene from "./scripts/Scene";
+import Load from "./scripts/Load";
+import Gui from "./scripts/Gui";
 
-class App {
-	constructor() {
-		this.scene = null;
-		this.load = null;
-		this.gui = null;
+let scene = null;
+let load = null;
+let gui = null;
 
-		this.letsPlay();
-	}
+const App = async () => {
+   scene = new Scene();
+   load = new Load(scene);
+   gui = new Gui(load);
 
-	async letsPlay() {
-		this.scene = new Scene();
-		this.load = new Load(this.scene);
-		this.gui = new Gui(this.load);
+   await load.loadFile("./models/street_car.glb");
 
-		await this.load.loadFile("./models/street_car.glb");
+   init();
+   animate();
+};
 
-		this.init();
-		this.animate();
-	}
+const init = () => {
+   document.body.appendChild(scene.renderer.domElement);
+   window.addEventListener("resize", onWindowResize, false);
+};
 
-	init() {
-		document.body.appendChild(this.scene.renderer.domElement);
-		window.addEventListener('resize', this.onWindowResize.bind(this), false);
-	}
+const rotateModel = () => {
+   load.model.rotation.y += 0.005;
+};
 
-	rotateModel() {
-		this.load.model.rotation.y += 0.005;
-	}
+const onWindowResize = () => {
+   scene.camera.aspect = window.innerWidth / window.innerHeight;
+   scene.camera.updateProjectionMatrix();
+   scene.renderer.setSize(window.innerWidth, window.innerHeight);
+};
 
-	onWindowResize() {
-		this.scene.camera.aspect = window.innerWidth / window.innerHeight;
-		this.scene.camera.updateProjectionMatrix();
-		this.scene.renderer.setSize(window.innerWidth, window.innerHeight);
-	}
+const animate = () => {
+   requestAnimationFrame(animate);
+   scene.renderer.render(scene, scene.camera);
+   // this.rotateModel();
+};
 
-	animate() {
-		requestAnimationFrame(this.animate.bind(this));
-		this.scene.renderer.render(this.scene, this.scene.camera);
-		// this.rotateModel();
-	}
-}
-
-new App();
+App();
